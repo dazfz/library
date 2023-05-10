@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: #2196f3;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 50px;
+  border-color: #fff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #2196f3;
+  color: #fff;
+
+}
+td {
+  border-top: 1px solid #555;
+  text-align: left;
+  padding: 8px;
+  border-right: 1px solid #555;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+tr:nth-child(even) {
+  background-color: #444;
+}
+
+tr:nth-child(odd) {
+  background-color: #333;
+}
+
+th:last-child {
+  background-color: #e74c3c;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: #444;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #3c3c3c;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+input[type="submit"],
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  background-color: #2196f3;
+  margin-top: 0;
+}
+button:hover {
+  background-color: #1976d2;
+}
+
+.add {
+  background-color: #4caf50;
+}
+input[type="submit"]:hover,
+.add:hover {
+  background-color: #3e8e41;
+}
+
+.deleteButton {
+  background-color: #f44336;
+}
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+.add,
+.deleteAll {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  appearance: none;
+  border: 2px solid #333;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  background-color: #f44336;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4caf50;
+}

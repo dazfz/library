@@ -1,5 +1,3 @@
-let myLibrary = [];
-
 class Book {
   constructor(title, author, pages, read) {
     this.title = title;
@@ -8,6 +6,7 @@ class Book {
     this.read = read;
   }
 }
+let myLibrary = [];
 
 const addBookToLibrary = (title, author, pages, read) => {
   const book = new Book(title, author, pages, read);
@@ -72,13 +71,14 @@ function displayLibrary() {
       book.read = !book.read;
       readButton.textContent = book.read ? "Yes" : "No";
     };
+    readButton.classList.add("bg-blue-500", "hover:bg-blue-700", "text-white", "font-bold", "py-2", "px-4", "rounded");
     readCell.appendChild(readButton);
     row.appendChild(readCell);
 
     let deleteCell = document.createElement("td");
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
-    deleteButton.classList.add("deleteButton");
+    deleteButton.classList.add("deleteButton", "bg-red-500", "hover:bg-red-700", "text-white", "font-bold", "py-2", "px-4", "rounded");
     deleteButton.onclick = () => {
       myLibrary.splice(i, 1);
       displayLibrary();
@@ -89,6 +89,7 @@ function displayLibrary() {
     tableBody.appendChild(row);
   }
 }
+
 const openForm = () =>
   (document.getElementById("addBookModal").style.display = "block");
 

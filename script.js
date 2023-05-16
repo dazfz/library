@@ -48,43 +48,68 @@ function displayLibrary() {
 
     // Create a data cell for the book cover image and append it to the row
     let coverCell = document.createElement("td");
+    //coverImg.classList.add("mx-auto");
     coverCell.appendChild(coverImg);
     row.appendChild(coverCell);
 
     // Create a data cell, get book info and append it to the row
-    let titleCell = document.createElement("td");
-    titleCell.textContent = book.title;
-    row.appendChild(titleCell);
+    let infoCell = document.createElement("td");
+    infoCell.innerHTML = `<strong>Title:</strong> ${book.title}<br><strong>Author:</strong> ${book.author}<br><strong>Total pages:</strong> ${book.pages}`;
+    row.appendChild(infoCell);
 
-    let authorCell = document.createElement("td");
-    authorCell.textContent = book.author;
-    row.appendChild(authorCell);
+    // Create a data cell for the buttons and append it to the row
+    let buttonsCell = document.createElement("td");
 
-    let pagesCell = document.createElement("td");
-    pagesCell.textContent = book.pages;
-    row.appendChild(pagesCell);
-
-    let readCell = document.createElement("td");
+    // Create the Read button
     let readButton = document.createElement("button");
-    readButton.textContent = book.read ? "Yes" : "No";
+    readButton.innerHTML = book.read
+      ? '<i class="fa-solid fa-check"></i>'
+      : ' <i class="fa-solid fa-x"></i>';
     readButton.onclick = () => {
       book.read = !book.read;
-      readButton.textContent = book.read ? "Yes" : "No";
+      readButton.innerHTML = book.read
+        ? ' <i class="fa-solid fa-check"></i>'
+        : ' <i class="fa-solid fa-x"></i>';
     };
-    readButton.classList.add("bg-blue-500", "hover:bg-blue-700", "text-white", "font-bold", "py-2", "px-4", "rounded");
-    readCell.appendChild(readButton);
-    row.appendChild(readCell);
 
-    let deleteCell = document.createElement("td");
+    readButton.classList.add(
+      "bg-blue-500",
+      "hover:bg-blue-700",
+      "text-white",
+      "font-bold",
+      "py-2",
+      "px-4",
+      "rounded-full",
+      "mx-auto",
+      "block"
+    );
+
+    // Create the Delete button
     let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.classList.add("deleteButton", "bg-red-500", "hover:bg-red-700", "text-white", "font-bold", "py-2", "px-4", "rounded");
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
+    deleteButton.classList.add(
+      "deleteButton",
+      "bg-red-500",
+      "hover:bg-red-700",
+      "text-white",
+      "font-bold",
+      "py-2",
+      "px-4",
+      "rounded-full",
+      "mx-auto",
+      "block"
+    );
+
     deleteButton.onclick = () => {
       myLibrary.splice(i, 1);
       displayLibrary();
     };
-    deleteCell.appendChild(deleteButton);
-    row.appendChild(deleteCell);
+
+    buttonsCell.appendChild(readButton);
+    buttonsCell.appendChild(document.createElement("br"));
+    buttonsCell.appendChild(deleteButton);
+    row.appendChild(buttonsCell);
 
     tableBody.appendChild(row);
   }
@@ -101,8 +126,7 @@ const addBook = (event) => {
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
-  let read = document.getElementById("read").checked;
-  addBookToLibrary(title, author, pages, read);
+  addBookToLibrary(title, author, pages, false);
   closeForm();
   displayLibrary();
 };

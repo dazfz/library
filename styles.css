@@ -1,13 +1,10 @@
 * {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  
 }
-body{
-background-image: url('124383.jpg');
+body {
+  background-image: url("124383.jpg");
 }
-.container{
-  width: 650px;
-}
+
 .modal {
   display: none;
   position: fixed;
@@ -27,7 +24,7 @@ background-image: url('124383.jpg');
   border-radius: 10px;
 }
 
-label{
+label {
   font-weight: bold;
 }
 .close {
@@ -58,4 +55,3 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #edf2f7;
 }
-

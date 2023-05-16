@@ -33,8 +33,8 @@
   cursor: pointer;
 }
 
-input{
-  color:black;
+input {
+  color: black;
 }
 
 input[type="checkbox"] {
@@ -60,7 +60,6 @@ td {
   border-right: 1px solid #555;
 }
 
-
 tr:nth-child(even) {
   background-color: #444;
 }
@@ -68,5 +67,3 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #333;
 }
-
-

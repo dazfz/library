@@ -136,6 +136,20 @@ const deleteAllBooks = () => {
   displayLibrary();
 };
 
+// scroll hacia abajo, esconde la navbar
+const navbar = document.getElementById("navbar");
+let prevScrollPos = window.pageYOffset;
+const handleScroll = () => {
+  const currentScrollPos = window.pageYOffset;
+  if (prevScrollPos > currentScrollPos)
+    navbar.style.transform = "translateY(0)";
+  else navbar.style.transform = `translateY(-${navbar.offsetHeight}px)`;
+  prevScrollPos = currentScrollPos;
+};
+
+// Asigna la función de control de scroll al evento 'scroll'
+window.addEventListener("scroll", handleScroll);
+
 // sample books
 addBookToLibrary("1984", "George Orwell", 328, false);
 addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1488, true);

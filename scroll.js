@@ -1,0 +1,1 @@
+(()=>{const t=document.getElementById("navbar");let e=window.scrollY;window.addEventListener("scroll",(()=>{const n=window.scrollY;t.style.transform=e>n?"translateY(0)":`translateY(-${t.offsetHeight}px)`,e=n}))})();
